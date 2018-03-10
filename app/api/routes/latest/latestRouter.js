@@ -1,7 +1,6 @@
-const router = require('express').Router();
+const searchRouter = require('express').Router();
+const { getAll } = require('./latestController');
 
-router.route('/').get((req, res) => {
-  res.send({ ok: 'latest' });
-});
+searchRouter.route('/').get(getAll);
 
-module.exports = router;
+module.exports = searchRouter;
