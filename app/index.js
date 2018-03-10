@@ -1,7 +1,7 @@
 const express = require('express');
 
 const connectDb = require('./database');
-const config = require('./config');
+const { config } = require('./config');
 const useMiddleware = require('./middleware');
 const api = require('./api');
 

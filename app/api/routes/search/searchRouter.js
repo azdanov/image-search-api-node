@@ -1,7 +1,8 @@
-const router = require('express').Router();
+const searchRouter = require('express').Router();
+const { logSearchTerm, getAll, getOne } = require('./searchController');
 
-router.route('/').get((req, res) => {
-  res.send({ ok: 'search' });
-});
+searchRouter.route('/').get(getAll);
+searchRouter.use('/:term', logSearchTerm);
+searchRouter.route('/:term').get(getOne);
 
-module.exports = router;
+module.exports = searchRouter;
