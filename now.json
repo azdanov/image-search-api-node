@@ -1,0 +1,5 @@
+{
+  "env": {
+    "MONGO_URL": "@image-search-api-node"
+  }
+}
