@@ -1,15 +1,15 @@
 const express = require('express');
 
-const db = require('./database');
+const connectDb = require('./database');
 const config = require('./config');
-const middleware = require('./middleware');
+const useMiddleware = require('./middleware');
 const api = require('./api');
 
-db(config.url);
+connectDb(config.url);
 
 const app = express();
 
-middleware(app, config.mode);
+useMiddleware(app, config.mode);
 
 app.use('/api', api);
 
